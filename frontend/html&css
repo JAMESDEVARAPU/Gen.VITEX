@@ -1,1 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Convert YouTube videos to text, get summaries, and interact with AI-powered questions and answers.">
+  <title>Gen.VITEX - YouTube Video to Text Converter</title>
+  <!-- Font Awesome for YouTube Icon -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    header .logo h1 {
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+    }
+
+    header .logo h1 i {
+      margin-right: 10px;
+    }
+
+    header .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    header .nav-links li {
+      margin: 0 10px;
+    }
+
+    header .nav-links a {
+      color: white;
+      text-decoration: none;
+    }
+
+    #hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 20px;
+      background-color: #007bff;
+      color: white;
+    }
+
+    #hero .hero-content {
+      width: 60%;
+    }
+
+    #hero .hero-content h2 {
+      font-size: 36px;
+    }
+
+    #hero .hero-content p {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+
+    #hero input {
+      padding: 10px;
+      width: 70%;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    #hero button {
+      padding: 10px 20px;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #how-it-works, #features, #cta {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #fff;
+      margin: 20px 0;
+    }
+
+    #how-it-works h2, #features h2, #cta h2 {
+      font-size: 30px;
+    }
+
+    .steps {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+    }
+
+    .step {
+      width: 30%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-cards {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+    }
+
+    .card {
+      width: 30%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #ai-question {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+
+    #ai-question textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      margin-bottom: 15px;
+    }
+
+    
+    
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    footer .social-links a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    #cta button {
+      padding: 15px 30px;
+      background-color: #28a745;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <h1><i class="fab fa-youtube"></i> Gen.VITEX</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#how-it-works">How It Works</a></li>
+      
+        
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content">
+      <h2>Watch Less, Read More – Convert YouTube Videos to Text!
+</h2>
+      <p>Get summaries, key points, and insights from your favorite YouTube videos in seconds.</p>
+      <input type="url" id="youtube-url" placeholder="Enter YouTube Video URL" />
+      <button id="convert-btn">Convert Video</button>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Step 1: Enter YouTube URL</h3>
+        <p>Paste the URL of the YouTube video you want to convert.</p>
+      </div>
+      <div class="step">
+        <h3>Step 2: Get Text</h3>
+        <p>Our AI extracts the video’s transcript and summarizes the key points.</p>
+      </div>
+      <div class="step">
+        <h3>Step 3: Ask Questions</h3>
+        <p>Use our AI-powered question box to ask anything about the video content.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features">
+    <h2>Why Choose Us?</h2>
+    <div class="feature-cards">
+      <div class="card">
+        <h3>Fast and Accurate</h3>
+        <p>Get an accurate transcription and summary in minutes.</p>
+      </div>
+      <div class="card">
+        <h3>AI-Powered Summaries</h3>
+        <p>AI summarizes the key points and main ideas in seconds.</p>
+      </div>
+      <div class="card">
+        <h3>Interactive Q&A</h3>
+        <p>Ask any questions, and get AI-generated answers based on the video content.</p>
+      </div>
+    </div>
+
+  <!-- Call to Action Section -->
+  <section id="cta">
+    <h2>Ready to Convert Your Video?</h2>
+    <button id="convert-now-btn">Convert Now</button>
+  </section>
+
+  
+  </section>
